@@ -5,16 +5,17 @@ angular.module('CalculatorApp', [])
     
     CalculatorController.$inject = ['$scope'];
 
-    function CalculatorController() {
-        var vm = this;        
+    function CalculatorController($scope) {
+        // $scope is the old way of defining variables and methods on the controller.
+        
         // Here is an example of adding a variable to the scope.
-        vm.title = 'AngularJS Calculator';
-        vm.a = 10;
-        vm.b = 5;
-        vm.operator = '+';
+        $scope.title = 'AngularJS Calculator';
+        $scope.a = 10;
+        $scope.b = 5;
+        $scope.operator = '+';
         // Here is an example of adding a method to the scope.
-        vm.result = function () {
-            return calculate(vm.a, vm.b, vm.operator);
+        $scope.result = function () {
+            return calculate($scope.a, $scope.b, $scope.operator);
         };
         // Private functions
         function calculate(a, b, operator)
