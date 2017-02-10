@@ -16,8 +16,11 @@ angular.module('CalculatorApp')
             vm.count++;
             vm.task = {
                 id: vm.count,
-                title: vm.taskTitle
+                title: vm.taskTitle,
+                checked: false, // new checked property
+                important: false
             };
             vm.todos.push(vm.task);
+            vm.taskTitle = null;
         };
     }
