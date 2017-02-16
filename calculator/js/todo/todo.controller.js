@@ -26,4 +26,24 @@ angular.module('CalculatorApp')
             // Reset the taskTitle:
             vm.taskTitle = null;
         };
+        /** 		
+        * Method to delete items from our task list 		
+        */
+        vm.delete = function (id) {
+            if (id > 0) {
+                index = -1;
+                // Loop throught the array to find the id
+                for (var i = 0; i < vm.todos.length; i++) {
+                    if (vm.todos[i].id == id) {
+                        index = i;
+                        break;
+                    }
+                }
+                // If id is found then we delete it.
+                if (index != -1) {
+                    vm.todos.splice(index, 1);
+                    vm.count--;
+                }
+            }
+        };
     }
